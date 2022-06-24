@@ -1,24 +1,4 @@
-// export const typesElementsPkm = [
-//  "Normal",
-//  "Feu",
-//  "Eau",
-//  "Élèctrique",
-//  "Plante",
-//  "Glace",
-//  "Combat",
-//  "Poison",
-//  "Sol",
-//  "Vol",
-//  "Psy",
-//  "Insecte",
-//  "Roche",
-//  "Spectre",
-//  "Dragon",
-//  "Acier",
-//  "Ténèbres"
-//  ]
-
- export const typesElementsPkm = [
+export const typesElementsPkm = [
     {
         type: "Normal",
         color: "#8e99a1"
@@ -87,4 +67,4 @@
         type: "Ténèbres",
         color: "#5d4e64"
     }
- ]
+]

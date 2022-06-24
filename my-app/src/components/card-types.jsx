@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-const CardTypes = ({ types, updateBg }) => {
+const CardTypes = ({ types, updateBg, myRef }) => {
 
     const changeStyle = (array, index, color) => {
         if(array[index] === true) {
@@ -24,12 +22,12 @@ const CardTypes = ({ types, updateBg }) => {
                 types.map((typeElement, index) => (
                     
                     <p 
+                        ref={myRef}
                         key={typeElement.type}
                         style={changeStyle(updateBg, index, typeElement.color)}
                     >
                         {typeElement.type}
                     </p>
-                    
                 ))
             }
         </div>
