@@ -1,4 +1,4 @@
-const randomTrigger = (x, array, setArray, setIsSelected) => {
+const randomTrigger = (x, array, setArray, setIsSelected, currentChance, setCurrentChance) => {
     const randomNumber = Math.floor(Math.random() * x);
     const arraySplice = array;
     setIsSelected((oldSelected) => {
@@ -8,15 +8,19 @@ const randomTrigger = (x, array, setArray, setIsSelected) => {
     })
 
     const delElem = () => {
-        const myTypePkm = prompt("Vos Pokémons seront de types " +  array[randomNumber].type + "! est ce dont vous avez toujours rêvé ?");
+        // if(currentChance < 1) {
+            const myTypePkm = prompt("Vos Pokémons seront de types " +  array[randomNumber].type + "! est ce dont vous avez toujours rêvé ?");
 
-        if(myTypePkm === "Oui") {
-            setArray(arraySplice.filter(elem => elem !== array[randomNumber]));
-        }
-        if(myTypePkm === "Non") {
-            setIsSelected(array.map((elem) => false));
-            randomTrigger(x, array, setArray, setIsSelected);
-        }
+            if(myTypePkm === "Oui") {
+                setArray(arraySplice.filter(elem => elem !== array[randomNumber]));
+            }
+            if(myTypePkm === "Non") {
+                setIsSelected(array.map((elem) => false));
+                setCurrentChance(currentChance + 1)
+                //Problème avec la fonctione qui s'appelle elle même. Pas top top à check pour améliorer.
+                // randomTrigger(x, array, setArray, setIsSelected, currentChance, setCurrentChance);       
+            }
+        // }
     }
     setTimeout(delElem, 1500);
 }

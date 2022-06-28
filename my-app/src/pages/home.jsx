@@ -28,7 +28,8 @@ const Home = () => {
             />
             <Trigger
                 myEvent={() => {
-                    randomTrigger(typesToSelect.length, typesToSelect, setTypesToSelect, setTypeIsSelected);
+                    randomTrigger(typesToSelect.length, typesToSelect, setTypesToSelect, setTypeIsSelected, chance, setChance);
+                    console.log(chance);
                 }}
             />    
         </div>
