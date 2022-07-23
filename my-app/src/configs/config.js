@@ -68,3 +68,73 @@ export const typesElementsPkm = [
         color: "#5d4e64"
     }
 ]
+
+//Ajouter des images pour les challengers
+
+export const challenger = [
+    {
+        name: "Kriss",
+        pseudo: "Similiss",
+        type: "Vol",
+        team: [
+            "Pkm1",
+            "Pkm2",
+            "Pkm3",
+            "Pkm4",
+            "Pkm5",
+            "Pkm6"
+        ]
+    },
+    {
+        name: "Jefafa",
+        pseudo: "Groundella",
+        type: "Sol",
+        team: [
+            "Pkm1",
+            "Pkm2",
+            "Pkm3",
+            "Pkm4",
+            "Pkm5",
+            "Pkm6",
+        ]
+    },
+    {
+        name: "Pierre",
+        pseudo: "Inconnu1",
+        type: "Acier",
+        team: [
+            "Pkm1",
+            "Pkm2",
+            "Pkm3",
+            "Pkm4",
+            "Pkm5",
+            "Pkm6",
+        ]
+    },
+    {
+        name: "Flow",
+        pseudo: "Inconnu2",
+        type: "Électrique",
+        team: [
+            "Pkm1",
+            "Pkm2",
+            "Pkm3",
+            "Pkm4",
+            "Pkm5",
+            "Pkm6",
+        ]
+    },
+    {
+        name: "Sacha",
+        pseudo: "Inconnu3",
+        type: "Combat",
+        team: [
+            "Pkm1",
+            "Pkm2",
+            "Pkm3",
+            "Pkm4",
+            "Pkm5",
+            "Pkm6",
+        ]
+    }
+]

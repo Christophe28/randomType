@@ -1,0 +1,25 @@
+.container-panelTryAgain {
+    border: 1px solid #cacaca;
+    background-color: #cacaca85;
+    width: 30%;
+    height: 20rem;
+    position: absolute;
+    top: 25%;
+    right: 33%;
+    left: 33%;
+
+    .top-side {
+        text-align: center;
+        margin-top: 22%;
+    }
+    .bot-side {
+        display: flex;
+        justify-content: space-around;
+        
+        input {
+            width: 18%;
+            height: 2rem;
+            border-radius: 10%;
+        }
+    }
+}
