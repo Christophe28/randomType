@@ -1,31 +1,27 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useReducer } from 'react';
 
 import CardTypes from '../components/card-types';
 import Trigger from '../components/trigger';
 
-import randomTrigger from '../functions/randomTrigger';
-
 import { typesElementsPkm } from '../configs/config';
 import PanelTryAgain from '../components/panel-try-again';
-
 
 const Home = () => {
     const [typesToSelect, setTypesToSelect] = useState(typesElementsPkm);
     const [typeIsSelected, setTypeIsSelected] = useState(typesToSelect.map((type) => false));
     const [currentType, setCurrentType] = useState("");
-    const [tryAgain, setTryAgain] = useState("");
-    const [chance, setChance] = useState(0);
     const [displayPanel, setDisplayPanel] = useState("none");
+    const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
 
     useEffect(() => {
-        typeIsSelected.map((trueType) => {
-            if(trueType === true) {
-                setCurrentType(typesToSelect[typeIsSelected.indexOf(trueType)].type);
+        for(let elem of typeIsSelected) {
+            if(elem === true) {
+                setCurrentType(typesToSelect[typeIsSelected.indexOf(elem)].type)
             }
-        })
-        
+        }
+        setRandomNumber(Math.floor(Math.random() * typesToSelect.length));
     }, [typeIsSelected])
-
     
     const ref = useRef(null);
     
@@ -42,18 +38,22 @@ const Home = () => {
             />
             <Trigger
                 myEvent={() => {
-                    randomTrigger(typesToSelect.length, typesToSelect, displayPanel, setTypesToSelect, setTypeIsSelected, setDisplayPanel, tryAgain, currentType, chance, setChance);
+                    setTypeIsSelected((oldSelected) => {
+                        const newSelected = [...oldSelected];
+                        newSelected[randomNumber] = true;
+                        return newSelected
+                    })
+                    setDisplayPanel("");
                 }}
             />  
 
             <PanelTryAgain 
                 display={displayPanel}
                 type={currentType}
-                updateChoice={(e) => {
-                        setTryAgain(e.target.value)
-                        randomTrigger(typesToSelect.length, typesToSelect, displayPanel, setTypesToSelect, setTypeIsSelected, setDisplayPanel, tryAgain, currentType, chance, setChance);
-                    }
-                }
+                setDisplay={setDisplayPanel}
+                setTypeIsSelected={setTypeIsSelected}
+                typesToSelect={typesToSelect}
+                setTypesToSelect={setTypesToSelect}
             />
         </div>
     );

@@ -2,8 +2,11 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
     p {
         font-size: 2rem;
+        font-weight: bolder;
+        letter-spacing: 1rem;
         border: 1px solid black;
         width: 40%;
         text-align: center;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PanelTryAgain = ({ display, type, updateChoice }) => {
+const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSelect, setTypesToSelect }) => {
     return (
         <div 
         className="container-panelTryAgain"
@@ -13,12 +13,20 @@ const PanelTryAgain = ({ display, type, updateChoice }) => {
                 <input 
                     type="button" 
                     value="Oui" 
-                    onClick={updateChoice}
+                    onClick={(e) => {
+                            setDisplay("none");     
+                            setTypeIsSelected(typesToSelect.map((type) => false))  
+                        }
+                    }
                 />
                 <input 
                     type="button" 
                     value="Non" 
-                    onClick={updateChoice}
+                    onClick={(e) => {
+                            setDisplay("none");
+                            setTypesToSelect(typesToSelect.filter(elem => elem.type !== type));
+                        }
+                    }
                 />
             </section>
         </div>

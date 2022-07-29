@@ -3,14 +3,15 @@ const CardTypes = ({ types, updateBg, myRef }) => {
     const changeStyle = (array, index, color) => {
         if(array[index] === true) {
             const trueStyle = {
-                background: color,
-                color: "white"
+                background: "white",
+                color: color
             }
             return trueStyle
         }
         else {
             const falseStyle = {
-                color: color
+                background: color,
+                color: "white"
             }
             return falseStyle
         }
@@ -26,7 +27,7 @@ const CardTypes = ({ types, updateBg, myRef }) => {
                         key={typeElement.type}
                         style={changeStyle(updateBg, index, typeElement.color)}
                     >
-                        {typeElement.type}
+                        {typeElement.type} = {index}
                     </p>
                 ))
             }
