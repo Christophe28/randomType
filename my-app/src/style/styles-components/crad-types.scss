@@ -1,15 +1,33 @@
 .container-card {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+    @media screen and (min-width: 380px) {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;       
+    }
+
+    @media screen and (max-width: 380px) {
+        height: 40vh;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
     p {
-        font-size: 2rem;
-        font-weight: bolder;
-        letter-spacing: 1rem;
-        border: 1px solid black;
-        width: 40%;
-        height: 2.5rem;
-        text-align: center;
+        @media screen and (min-width: 380px){      
+            font-size: 2rem;
+            font-weight: bolder;
+            letter-spacing: 1rem;
+            border: 1px solid black;
+            width: 40%;
+            height: 2.5rem;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 380px){
+            text-align: center;
+            height: 1.5rem;
+            width: 33%;
+        }
     }
 }

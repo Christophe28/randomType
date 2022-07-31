@@ -8,6 +8,12 @@
     left: 50%;
     transform: translateX(-50%);
 
+    @media screen and (max-width: 380px) {
+        width: 80%;
+        height: 200px;
+        top: 10px;
+    }
+
     .top-side {
         text-align: center;
         margin-top: 10%;
