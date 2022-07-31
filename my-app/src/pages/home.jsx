@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useReducer } from 'react';
 
 import CardTypes from '../components/card-types';
 import Trigger from '../components/trigger';
+import PanelTryAgain from '../components/panel-try-again';
 
 import { typesElementsPkm } from '../configs/config';
-import PanelTryAgain from '../components/panel-try-again';
 
 const Home = () => {
     const [typesToSelect, setTypesToSelect] = useState(typesElementsPkm);
@@ -35,8 +34,11 @@ const Home = () => {
                 types={typesToSelect}
                 updateBg={typeIsSelected}
                 myRef={ref}
+                displayPanel={displayPanel}
             />
             <Trigger
+                currentType={currentType}
+                typesToSelect={typesToSelect}
                 myEvent={() => {
                     setTypeIsSelected((oldSelected) => {
                         const newSelected = [...oldSelected];

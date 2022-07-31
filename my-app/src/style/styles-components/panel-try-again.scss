@@ -10,7 +10,11 @@
 
     .top-side {
         text-align: center;
-        margin-top: 22%;
+        margin-top: 10%;
+
+        p {
+            font-size: 1.7rem;
+        }
     }
     .bot-side {
         display: flex;
@@ -19,7 +23,17 @@
         input {
             width: 18%;
             height: 2rem;
-            border-radius: 10%;
+            // border-radius: 10%;
+            font-size: 1rem;
+            font-weight: bolder;
+
+            &:hover {
+                cursor: pointer;
+            }
+            &:active {
+                background-color: black;
+                color: white;
+            }
         }
     }
 }

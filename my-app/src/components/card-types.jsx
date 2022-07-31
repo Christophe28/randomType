@@ -1,22 +1,12 @@
-const CardTypes = ({ types, updateBg, myRef }) => {
+ import changeStyleCards from "../functions/change-style-cards";
 
-    const changeStyle = (array, index, color) => {
-        if(array[index] === true) {
-            const trueStyle = {
-                background: "white",
-                color: color
-            }
-            return trueStyle
-        }
-        else {
-            const falseStyle = {
-                background: color,
-                color: "white"
-            }
-            return falseStyle
-        }
-    }
-
+const CardTypes = ({ types, updateBg, myRef, displayPanel }) => {
+    // style={{
+    //     backgroundImage: `url(${typeElement.icon})`,
+    //     backgroundRepeat: "no-repeat",
+    //     backgroundSize: "40px 40px",
+    //     backgroundSize: "contain"
+    // }}
     return (
         <div className="container-card">
             {
@@ -25,10 +15,11 @@ const CardTypes = ({ types, updateBg, myRef }) => {
                     <p 
                         ref={myRef}
                         key={typeElement.type}
-                        style={changeStyle(updateBg, index, typeElement.color)}
+                        style={changeStyleCards(updateBg, index, typeElement.color, displayPanel)}
                     >
-                        {typeElement.type} = {index}
+                        {typeElement.type}
                     </p>
+                    
                 ))
             }
         </div>
