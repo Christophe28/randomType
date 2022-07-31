@@ -4,9 +4,9 @@
     width: 30%;
     height: 20rem;
     position: absolute;
-    top: 25%;
-    right: 33%;
-    left: 33%;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
 
     .top-side {
         text-align: center;

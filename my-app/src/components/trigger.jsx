@@ -1,28 +1,14 @@
-import React from 'react';
+import changeBackgroundTrigger from '../functions/change-background-trigger';
 
-const Trigger = ({ myEvent, currentType, typesToSelect }) => {
-
-    const backgroundTrigger = () => {
-        if(currentType !== ""){
-            for(let elem of typesToSelect) {
-                if(elem.type === currentType) {
-                    const bgTrigger = {
-                        background: "url(" + elem.icon + ") no-repeat center center fixed" ,
-                    }
-                    return bgTrigger
-                }
-            }
-        }
-    }
-    backgroundTrigger();
+const Trigger = ({ textTrigger, myEvent, currentType, typesToSelect }) => {
 
     return (
         <div className="container-trigger">
             <input 
                 type="button" 
-                value="Go random!!!"
+                value={textTrigger}
                 onClick={myEvent}
-                style={backgroundTrigger()}
+                style={changeBackgroundTrigger(currentType, typesToSelect)}
             />
         </div>
     );

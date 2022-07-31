@@ -12,6 +12,10 @@ const Home = () => {
     const [currentType, setCurrentType] = useState("");
     const [displayPanel, setDisplayPanel] = useState("none");
     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
+    const [textTrigger, setTextTrigger] = useState("Go random!!!");
+    const [lastChoiceByUser, setLastChoiceByUser] = useState("");
+
+    const ref = useRef(null);
 
     useEffect(() => {
         for(let elem of typeIsSelected) {
@@ -22,12 +26,14 @@ const Home = () => {
         setRandomNumber(Math.floor(Math.random() * typesToSelect.length));
     }, [typeIsSelected])
     
-    const ref = useRef(null);
-    
     useEffect(() => {
         setTypeIsSelected(typesToSelect.map((type) => false));        
     }, [typesToSelect])
     
+    useEffect(() => {
+        lastChoiceByUser === "Oui" ? setTextTrigger("") : setTextTrigger("Go random")
+    }, [lastChoiceByUser])
+
     return (
         <div className="container-home">
             <CardTypes
@@ -37,8 +43,7 @@ const Home = () => {
                 displayPanel={displayPanel}
             />
             <Trigger
-                currentType={currentType}
-                typesToSelect={typesToSelect}
+                textTrigger={textTrigger}
                 myEvent={() => {
                     setTypeIsSelected((oldSelected) => {
                         const newSelected = [...oldSelected];
@@ -46,7 +51,10 @@ const Home = () => {
                         return newSelected
                     })
                     setDisplayPanel("");
+                    setTextTrigger("");
                 }}
+                currentType={currentType}
+                typesToSelect={typesToSelect}
             />  
 
             <PanelTryAgain 
@@ -56,6 +64,7 @@ const Home = () => {
                 setTypeIsSelected={setTypeIsSelected}
                 typesToSelect={typesToSelect}
                 setTypesToSelect={setTypesToSelect}
+                setLastChoiceByUser={setLastChoiceByUser}
             />
         </div>
     );
