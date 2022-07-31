@@ -10,9 +10,11 @@
         border-radius: 50%;
         border: 0px;
 
-        @media screen and (max-width: 380px) {
+        @media screen and (max-width: 390px) {
+            z-index: 1;
+            border-radius: 50%;
             position: absolute;
-            top: 350px;
+            top: 80%;
         }
 
         &:hover{

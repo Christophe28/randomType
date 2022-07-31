@@ -1,5 +1,10 @@
 body {
-    background-color: black;
+    input{
+        -webkit-appearance: none;
+        background-attachment: fixed;
+    }
+
+    background-color: darkcyan;
 }
 
 @import "./styles-components/crad-types.scss";

@@ -1,12 +1,12 @@
 .container-card {
 
-    @media screen and (min-width: 380px) {
+    @media screen and (min-width: 390px) {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;       
     }
 
-    @media screen and (max-width: 380px) {
+    @media screen and (max-width: 390px) {
         height: 40vh;
         display: flex;
         justify-content: space-around;
@@ -14,20 +14,21 @@
     }
 
     p {
-        @media screen and (min-width: 380px){      
+        @media screen and (min-width: 390px){      
             font-size: 2rem;
             font-weight: bolder;
             letter-spacing: 1rem;
-            border: 1px solid black;
+            border: 1px solid #cacaca85;
             width: 40%;
             height: 2.5rem;
             text-align: center;
         }
 
-        @media screen and (max-width: 380px){
+        @media screen and (max-width: 390px){
             text-align: center;
             height: 1.5rem;
-            width: 33%;
+            width: 30%;
+            border: 1px solid #cacaca85;
         }
     }
 }

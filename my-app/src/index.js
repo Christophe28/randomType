@@ -5,7 +5,7 @@ import App from './App';
 // basename="/randomType"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <Router basename='/randomType'>
     <App />
   </Router>
 );
