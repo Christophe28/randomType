@@ -3,11 +3,13 @@ import { useState } from 'react';
 
 import { numberParticipants } from '../configs/config';
 
+import namesChallenger from '../functions/register/namesChallenger';
+
 const Register = ({ challenger, setChallenger }) => {
     const [numberChallenger, setNumberChallenger] = useState(1);
-    const [pseudo, setPseudo] = useState();
+    const [pseudo, setPseudo] = useState("");
     const [orderChallenger, setOrderChallenger] = useState(0);
-    console.log(challenger);
+
     return (
         <div className="container-register">
             <h1>Randomiser Pokemon</h1>
@@ -24,15 +26,7 @@ const Register = ({ challenger, setChallenger }) => {
                 onChange={(e) => setPseudo(e.target.value)}
                 onKeyDown={(e) => {
                     if(e.key === "Enter") {
-                        if(orderChallenger < numberChallenger) {
-                            setChallenger((oldChallenger) => {
-                                const newChallenger = [...oldChallenger];
-                                newChallenger[orderChallenger] = pseudo;
-                                return newChallenger
-                            })
-                            setOrderChallenger(orderChallenger + 1);
-                            setPseudo("");
-                        }
+                        namesChallenger(orderChallenger, numberChallenger, setChallenger, pseudo, setOrderChallenger, setPseudo);
                     }
                 }}
             />
@@ -40,20 +34,13 @@ const Register = ({ challenger, setChallenger }) => {
                 type="button" 
                 value="Valider" 
                 onClick={() => {
-                    if(orderChallenger < numberChallenger) {
-                        setChallenger((oldChallenger) => {
-                            const newChallenger = [...oldChallenger];
-                            newChallenger[orderChallenger] = pseudo;
-                            return newChallenger
-                        })
-                        setOrderChallenger(orderChallenger + 1);
-                    }
+                    namesChallenger(orderChallenger, numberChallenger, setChallenger, pseudo, setOrderChallenger, setPseudo);
                 }}
             />
             <section className="container-challenger">
                 {
                     challenger.map((nameChall, index) => (
-                        <ul key={nameChall}>
+                        <ul key={nameChall + index}>
                             <li>
                                 {index + 1}
                                 <ul>
