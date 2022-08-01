@@ -1,3 +1,4 @@
+//Config for home.jsx
 import iconNormal from "../assets/icon-type-normal.png"
 import iconFire from "../assets/icon-type-fire.png"
 import iconWater from "../assets/icon-type-water.png"
@@ -104,7 +105,11 @@ export const typesElementsPkm = [
     }
 ]
 
-//Ajouter des images pour les challengers
+
+//register.jsx
+export const numberParticipants = Array.apply(null, new Array(10)).map((el, i) => {return ++i})
+
+//my-types.jsx
 
 export const challenger = [
     {
