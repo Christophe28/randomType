@@ -1,12 +1,12 @@
 .container-card {
 
-    @media screen and (min-width: 390px) {
+    @media screen and (min-width: 1001px) {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;       
     }
 
-    @media screen and (max-width: 390px) {
+    @media screen and (max-width: 1000px) {
         height: 40vh;
         display: flex;
         justify-content: space-around;
@@ -14,7 +14,7 @@
     }
 
     p {
-        @media screen and (min-width: 390px){      
+        @media screen and (min-width: 1001px){      
             font-size: 2rem;
             font-weight: bolder;
             letter-spacing: 1rem;
@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        @media screen and (max-width: 390px){
+        @media screen and (max-width: 1000px){
             text-align: center;
             height: 1.5rem;
             width: 30%;
