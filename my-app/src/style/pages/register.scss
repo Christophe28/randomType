@@ -1,0 +1,45 @@
+.container-register {
+    
+    h1 {
+        color:  #FFD400;
+        text-align: center;
+    }
+
+    p {
+        color: white;
+    }
+
+    .container-number-challenger {
+        display: flex;
+        justify-content: center;
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            width: 15%;
+            align-items: center;
+            select {
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .container-input {
+        display: flex;
+        justify-content: center;
+
+        .input-text {
+            margin-right: 20px;
+        }
+        
+        .validate {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+        
+}
