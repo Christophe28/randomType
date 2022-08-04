@@ -1,4 +1,4 @@
-const goUpdateNames = (array, index, myInput, namesChallenger) => {
+const goUpdateNames = ( array, index, myInput, namesChallenger) => {
     if(array[index] === true) {
         return myInput
     }

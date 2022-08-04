@@ -1,9 +1,12 @@
+@import "./settings.scss";
+
 body {
     input{
         -webkit-appearance: none;
         background-attachment: fixed;
     }
-    background-color: rgba(0, 0, 0, 0.821);
+    // background-color: rgba(0, 0, 0, 0.821);
+    background-color: $bg-color;
 }
 
 @import "./pages/register.scss";

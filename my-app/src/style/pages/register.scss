@@ -6,7 +6,7 @@
     }
 
     p {
-        color: white;
+        color: $color-1;
     }
 
     .container-number-challenger {
@@ -47,13 +47,13 @@
         table {
             margin: auto;
             margin-top: 100px;   
-             
+
             thead {
 
                 tr {
 
                     th {
-                        color: white;
+                        color: $color-1;
                     }
                 }
             }
@@ -63,7 +63,21 @@
                 tr {
 
                     td {
-                        color: white;
+                        color: $color-1;
+
+                        input {
+                            width: 75%;
+                            background-color: rgb(50, 50, 50);
+                            color: $color-1;
+                            text-align: center;
+                            border: 1px solid white;
+                        }
+
+                        img {
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
                     }
                     .long-side {
                         width: 150px;

@@ -6,6 +6,7 @@ import { numberParticipants } from '../configs/config';
 
 //Components
 import MyInput from '../components/my-input';
+import NextPage from '../components/next-page';
 
 //Functions
 import namesChallenger from '../functions/register/namesChallenger';
@@ -26,13 +27,19 @@ const Register = ({ challenger, setChallenger }) => {
         setUpdateName(challenger.map(() => false))
     }, [challenger])
 
+    const returnNavLink = () => {
+        if(challenger.length === numberChallenger) {
+            return <NextPage />
+        }
+    }
+
     return (
         <div className="container-register">
             <h1>Randomiser Pokemon</h1>
             <section className="container-number-challenger">
                 <div>
                 <p>Choisis le nomber de participants : </p>
-                    <select name="numberOfParticipant" id="numberOfParticipant" onChange={(e) => setNumberChallenger(e.target.value)}>
+                    <select name="numberOfParticipant" id="numberOfParticipant" onChange={(e) => {setNumberChallenger(parseInt(e.target.value))}}>
                         {
                             numberParticipants.map((numberParticipant) => (
                                 <option key={numberParticipant}>{numberParticipant}</option>
@@ -43,17 +50,15 @@ const Register = ({ challenger, setChallenger }) => {
                 
             </section>
             <section className="container-input">
-                {/* Faire un composant pour cet input */}
-                <input 
-                    type="text" 
-                    className="input-text"
-                    placeholder="pseudo"
+                <MyInput
+                    className={"input-text"}
+                    placeholder={"pseudo"}
                     value={pseudo}
                     onChange={(e) => setPseudo(e.target.value)}
                     onKeyDown={(e) => {
-                            if(e.key === "Enter") {
-                                namesChallenger(orderChallenger, numberChallenger, setChallenger, pseudo, setOrderChallenger, setPseudo);
-                            }
+                        if(e.key === "Enter") {
+                            namesChallenger(orderChallenger, numberChallenger, setChallenger, pseudo, setOrderChallenger, setPseudo);
+                        }
                     }}
                 />
                 <input 
@@ -84,7 +89,7 @@ const Register = ({ challenger, setChallenger }) => {
                                             index, 
                                             <MyInput
                                                 nameChall={nameChall}
-                                                test={(e) => {
+                                                onKeyDown={(e) => {
                                                     if(e.key === "Enter") {
                                                         updateArrayState(setChallenger, index, newPseudo);
                                                         updateArrayState(setUpdateName, index, false);
@@ -111,6 +116,9 @@ const Register = ({ challenger, setChallenger }) => {
                     </tbody>
                 </table>
             </section>
+            {
+                returnNavLink()  
+            }
         </div>
     );
 };
