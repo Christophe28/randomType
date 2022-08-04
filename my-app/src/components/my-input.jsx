@@ -1,10 +1,15 @@
 import React from 'react';
 
-const MyInput = () => {
+const MyInput = ({ nameChall, test, onChange }) => {
     return (
-        <div>
-            <h1>Coucou</h1>
-        </div>
+        <>
+            <input 
+                type="text" 
+                defaultValue={nameChall}
+                onKeyDown={test}
+                onChange={onChange}
+            />
+        </>
     );
 };
 
