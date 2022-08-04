@@ -5,7 +5,6 @@ const changeBackgroundTrigger = (currentType, typesToSelect) => {
                 if(elem.type !== "Insecte"){
                     const bgTrigger = {
                         background: "url(" + elem.icon + ") no-repeat center"
-                        // no-repeat center center fixed
                     }
                     return bgTrigger
                 }

@@ -3,12 +3,14 @@
     h1 {
         color:  #FFD400;
         text-align: center;
+        font-size: 4rem;
     }
 
     p {
         color: $color-1;
+        font-size: 1.4rem;
+        
     }
-
     .container-number-challenger {
         display: flex;
         justify-content: center;
@@ -16,12 +18,25 @@
         div {
             display: flex;
             justify-content: space-around;
-            width: 15%;
+            width: 20%;
             align-items: center;
+
             select {
-    
+                border-radius: 50%; 
+                height: 50px;
+                width: 50px;
+                font-size: 1.1rem;
+                color: rgb(62, 20, 20);
+                opacity: 0.7;
+                background: url("../../assets/icon-pkb-64px.png") no-repeat center;
+                box-shadow: 3px -3px teal;
+                overflow-y: hidden;
                 &:hover {
                     cursor: pointer;
+                }
+
+                option {
+                    text-align: center;
                 }
             }
         }
@@ -30,6 +45,7 @@
     .container-input {
         display: flex;
         justify-content: center;
+        border-radius: 10%;
 
         .input-text {
             margin-right: 20px;
@@ -84,6 +100,16 @@
                         text-align: start;
                     }
                 }
+            }
+        }
+    }
+
+    .container-next-page {
+        text-align: center;
+        
+        input {
+            &:hover {
+                cursor: pointer;
             }
         }
     }

@@ -6,7 +6,7 @@ import PanelTryAgain from '../components/panel-try-again';
 
 import { typesElementsPkm } from '../configs/config';
 
-const Home = () => {
+const Home = ({ challenger }) => {
     const [typesToSelect, setTypesToSelect] = useState(typesElementsPkm);
     const [typeIsSelected, setTypeIsSelected] = useState(typesToSelect.map((type) => false));
     const [currentType, setCurrentType] = useState("");
@@ -16,7 +16,7 @@ const Home = () => {
     const [lastChoiceByUser, setLastChoiceByUser] = useState("");
 
     const ref = useRef(null);
-
+    console.log(challenger);
     useEffect(() => {
         for(let elem of typeIsSelected) {
             if(elem === true) {
