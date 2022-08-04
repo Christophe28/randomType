@@ -41,5 +41,36 @@
             }
         }
     }
+    
+    .container-challenger {
+
+        table {
+            margin: auto;
+            margin-top: 100px;    
+            thead {
+
+                tr {
+
+                    th {
+                        color: white;
+                    }
+                }
+            }
+
+            tbody {
+
+                tr {
+
+                    td {
+                        color: white;
+                    }
+                    .long-side {
+                        width: 150px;
+                        text-align: start;
+                    }
+                }
+            }
+        }
+    }
         
 }

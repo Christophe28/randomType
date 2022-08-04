@@ -24,7 +24,14 @@ const Register = ({ challenger, setChallenger }) => {
     }, [challenger])
 
     const test = (nameChall) => {
-        return nameChall
+        for(let elem of updateName) {
+            if(elem === false) {
+                return nameChall
+            }
+            else {
+                return "Yo"
+            }
+        }
     }
     console.log(updateName);
     return (
@@ -76,8 +83,8 @@ const Register = ({ challenger, setChallenger }) => {
                     {
                         challenger.map((nameChall, index) => (                            
                             <tr key={nameChall + index}>
-                                <td>Challenger {index + 1} : </td>
-                                <td>{test(nameChall)}</td>
+                                <td className="long-side">Challenger {index + 1} : </td>
+                                <td className="long-side">{test(nameChall)}</td>
                                 <td><img src={pngUpdate} alt="png" onClick={() => {
                                     setUpdateName((oldUpdate) => {
                                         const newUpdate = [...oldUpdate];
