@@ -7,6 +7,7 @@ import { numberParticipants } from '../configs/config';
 //Components
 import MyInput from '../components/my-input';
 import NextPage from '../components/next-page';
+import MyTable from '../components/my-table';
 
 //Functions
 import namesChallenger from '../functions/register/namesChallenger';
@@ -20,9 +21,10 @@ const Register = ({ challenger, setChallenger }) => {
     const [numberChallenger, setNumberChallenger] = useState(1);
     const [pseudo, setPseudo] = useState("");
     const [newPseudo, setNewPseudo] = useState("");
-    const [updateName, setUpdateName] = useState();
+    const [updateName, setUpdateName] = useState([]);
     const [orderChallenger, setOrderChallenger] = useState(0);
     
+    console.log(challenger);
     useEffect(() => {
         setUpdateName(challenger.map(() => false))
     }, [challenger])
@@ -39,15 +41,18 @@ const Register = ({ challenger, setChallenger }) => {
             <section className="container-number-challenger">
                 <div>
                 <p>Choisis le nomber de participants : </p>
-                    <select name="numberOfParticipant" id="numberOfParticipant" onChange={(e) => {setNumberChallenger(parseInt(e.target.value))}}>
+                    <select 
+                        name="numberOfParticipant" 
+                        id="numberOfParticipant" 
+                        onChange={(e) => {setNumberChallenger(parseInt(e.target.value))}}
+                    >
                         {
                             numberParticipants.map((numberParticipant) => (
                                 <option key={numberParticipant}>{numberParticipant}</option>
-                                ))
-                            }
+                            ))
+                        }
                     </select>
-                </div>
-                
+                </div>       
             </section>
             <section className="container-input">
                 <MyInput
@@ -70,52 +75,15 @@ const Register = ({ challenger, setChallenger }) => {
                     }}
                 />
             </section>
-            <section className="container-challenger">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colSpan="3">Challengers</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {
-                        challenger.map((nameChall, index) => (                            
-                            <tr key={nameChall + index}>
-                                <td className="long-side">Challenger {index + 1} : </td>
-                                <td className="long-side">
-                                    {
-                                        goUpdateNames(
-                                            updateName, 
-                                            index, 
-                                            <MyInput
-                                                nameChall={nameChall}
-                                                onKeyDown={(e) => {
-                                                    if(e.key === "Enter") {
-                                                        updateArrayState(setChallenger, index, newPseudo);
-                                                        updateArrayState(setUpdateName, index, false);
-                                                    }
-                                                    if(e.key === "Escape") {
-                                                        updateArrayState(setUpdateName, index, false);
-                                                    }
-                                                    
-                                                }}
-                                                onChange={(e) => {
-                                                    setNewPseudo(e.target.value);
-                                                }}
-                                            />, 
-                                            nameChall
-                                        )
-                                    }
-                                </td>
-                                <td><img src={pngUpdate} alt="png update" onClick={() => {
-                                    updateArrayState(setUpdateName, index, true);
-                                }} /></td>
-                            </tr>
-                            ))
-                        }
-                    </tbody>
-                </table>
-            </section>
+            <MyTable
+                challenger={challenger}
+                updateName={updateName}
+                setChallenger={setChallenger}
+                newPseudo={newPseudo}
+                setUpdateName={setUpdateName}
+                setNewPseudo={setNewPseudo}
+                pngUpdate={pngUpdate} 
+            />
             {
                 returnNavLink()  
             }

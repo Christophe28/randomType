@@ -107,14 +107,12 @@ export const typesElementsPkm = [
 
 
 //register.jsx
-export const objectChallenger = [
-    {
+export const objectChallenger = {
         name: "",
         chance: 2,
         type: "",
         picture: ""
-    }
-]
+}
 
 export const numberParticipants = Array.apply(null, new Array(10)).map((el, i) => {return ++i})
 

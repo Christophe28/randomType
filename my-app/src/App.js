@@ -7,18 +7,9 @@ import Register from "./pages/register";
 
 import "./style/index.scss";
 
-import { objectChallenger } from "./configs/config";
-
 const App = () => {
   const [challenger, setChallenger] = useState([]);
-  const [test, setTest] = useState([
-    {
-      name: "",
-      chance: 2,
-      type: "",
-      pictures: ""
-    }
-  ])
+
   return (
     <Routes>
       <Route 
