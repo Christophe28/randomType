@@ -1,7 +1,10 @@
-const colorsByChallenger = (types, challenger) => {
+const colorsByChallenger = (types, typesChallenger) => {
     for(let elem of types) {
-        if(elem.type === challenger.type) {
-            return elem.color
+        if(elem.type === typesChallenger) {
+            const colors = {
+                color: elem.color
+            }
+            return colors
         }
     }
 }

@@ -8,7 +8,8 @@ import Register from "./pages/register";
 import "./style/index.scss";
 
 const App = () => {
-  const [challenger, setChallenger] = useState(["Groundellalala", "Jeff"]);
+  const [challenger, setChallenger] = useState([]);
+  const [allType, setAllType] = useState([]);
 
   return (
     <Routes>
@@ -23,9 +24,17 @@ const App = () => {
         path="/randomType" 
         element={<Home 
           challenger={challenger}
+          allType={allType}
+          setAllType={setAllType}
         />}
       />
-      <Route path="/ourTypes" element={<MyTypes />} />
+      <Route 
+        path="/ourTypes" 
+        element={<MyTypes 
+          challenger={challenger}
+          type={allType}
+        />} 
+      />
     </Routes>
   )
 }

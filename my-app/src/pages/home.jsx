@@ -9,18 +9,17 @@ import LastPanel from '../components/last-panel';
 //config
 import { typesElementsPkm } from '../configs/config';
 
-const Home = ({ challenger }) => {
+const Home = ({ challenger, allType, setAllType }) => {
     const [typesToSelect, setTypesToSelect] = useState(typesElementsPkm);
     const [typeIsSelected, setTypeIsSelected] = useState(typesToSelect.map((type) => false));
     const [currentType, setCurrentType] = useState("");
     const [displayPanel, setDisplayPanel] = useState("none");
     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
-    const [lastChoiceByUser, setLastChoiceByUser] = useState("");
     const [chance, setChance] = useState(2);
     const [currentPlayer, setCurrentPlayer] = useState(0);
-    console.log("chance :", chance);
-    const ref = useRef(null);
     
+    const ref = useRef(null);
+
     useEffect(() => {
         for(let elem of typeIsSelected) {
             if(elem === true) {
@@ -34,6 +33,23 @@ const Home = ({ challenger }) => {
         setTypeIsSelected(typesToSelect.map((type) => false));        
     }, [typesToSelect])
 
+    useEffect(() => {
+        if(chance === 0) {
+            setCurrentPlayer(currentPlayer + 1);
+        }
+    }, [chance])
+
+    useEffect(() => {
+        if(currentType !== "") {
+            if(currentPlayer <= challenger.length) {
+                setAllType((oldType) => {
+                    const newType = [...oldType];
+                    newType[currentPlayer -1] = currentType;
+                    return newType
+                })
+            }
+        }
+    }, [currentPlayer])
     return (
         <div className="container-home">
             <CardTypes
@@ -50,6 +66,9 @@ const Home = ({ challenger }) => {
                         return newSelected
                     })
                     setDisplayPanel("");
+                    if(chance === 1) {
+                        setChance(chance - 1);
+                    }
                 }}
                 currentType={currentType}
                 typesToSelect={typesToSelect}
@@ -63,7 +82,6 @@ const Home = ({ challenger }) => {
                     setDisplay={setDisplayPanel}
                     setTypeIsSelected={setTypeIsSelected}
                     typesToSelect={typesToSelect}
-                    setLastChoiceByUser={setLastChoiceByUser}
                     currentPlayer={challenger[currentPlayer]}
                     chance={chance}
                     setChance={setChance}
@@ -75,6 +93,8 @@ const Home = ({ challenger }) => {
                     setDisplay={setDisplayPanel}
                     display={displayPanel}
                     setChance={setChance}
+                    challenger={challenger}
+                    currentPlayer={currentPlayer}
                 />
             }
         </div>

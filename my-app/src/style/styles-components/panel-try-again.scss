@@ -26,6 +26,11 @@
         display: flex;
         justify-content: space-around;
         
+        a {
+            width: 100%;
+            text-align: center;
+        }
+
         input {
             width: 18%;
             height: 2rem;

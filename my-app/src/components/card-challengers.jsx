@@ -4,27 +4,29 @@ import { typesElementsPkm, challenger } from '../configs/config';
 
 import colorsByChallenger from '../functions/colorsByChallenger';
 
-const CardChallenger = () => {
+const CardChallenger = ({ testChall, testType}) => {
+
+    const test = (soloType) => {
+        for(let elem of typesElementsPkm) {
+            if(elem.type === soloType) {
+                return <img src={elem.icon} alt="" />
+            }
+        }
+    }
+    
     return (
         <div className="container-card-challenger">
            {
-            challenger.map((chall) => (
-                <ul key={chall.pseudo} style={{color: colorsByChallenger(typesElementsPkm, chall)}}>
-                    {chall.name} alias {chall.pseudo}
-
+            testType.map((soloType, index) => (
+                <ul key={soloType} style={colorsByChallenger(typesElementsPkm ,soloType)}>
                     <li>
-                        type : {chall.type} 
-                    </li>
-                    <li>
-                        Equipe : 
+                        {testChall[index]}
                         <ul>
-                            {
-                                chall.team.map((soloPkm, key) => (
-                                    <p key={chall.team[key]}>{soloPkm}</p>
-                                ))
-                            }
+                            <li>
+                                {soloType}  {test(soloType)}
+                            </li>
                         </ul>
-                    </li>
+                    </li>               
                 </ul>
             ))
            }
