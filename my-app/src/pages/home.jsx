@@ -15,7 +15,6 @@ const Home = ({ challenger }) => {
     const [currentType, setCurrentType] = useState("");
     const [displayPanel, setDisplayPanel] = useState("none");
     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
-    const [textTrigger, setTextTrigger] = useState("Go random!!!");
     const [lastChoiceByUser, setLastChoiceByUser] = useState("");
     const [chance, setChance] = useState(2);
     const [currentPlayer, setCurrentPlayer] = useState(0);
@@ -34,10 +33,6 @@ const Home = ({ challenger }) => {
     useEffect(() => {
         setTypeIsSelected(typesToSelect.map((type) => false));        
     }, [typesToSelect])
-    
-    useEffect(() => {
-        lastChoiceByUser === "Oui" ? setTextTrigger("") : setTextTrigger("Go random")
-    }, [lastChoiceByUser])
 
     return (
         <div className="container-home">
@@ -48,7 +43,6 @@ const Home = ({ challenger }) => {
                 displayPanel={displayPanel}
             />
             <Trigger
-                textTrigger={textTrigger}
                 myEvent={() => {
                     setTypeIsSelected((oldSelected) => {
                         const newSelected = [...oldSelected];
@@ -56,8 +50,6 @@ const Home = ({ challenger }) => {
                         return newSelected
                     })
                     setDisplayPanel("");
-                    setTextTrigger("");
-                    // setChance(chance - 1);
                 }}
                 currentType={currentType}
                 typesToSelect={typesToSelect}
@@ -71,7 +63,6 @@ const Home = ({ challenger }) => {
                     setDisplay={setDisplayPanel}
                     setTypeIsSelected={setTypeIsSelected}
                     typesToSelect={typesToSelect}
-                    setTypesToSelect={setTypesToSelect}
                     setLastChoiceByUser={setLastChoiceByUser}
                     currentPlayer={challenger[currentPlayer]}
                     chance={chance}

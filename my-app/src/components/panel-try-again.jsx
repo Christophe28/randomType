@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSelect, setTypesToSelect, setLastChoiceByUser, currentPlayer, chance, setChance }) => {
+const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSelect, setLastChoiceByUser, currentPlayer, chance, setChance }) => {
     return (
         <div 
         className="container-panelTryAgain"
@@ -25,7 +25,6 @@ const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSe
                     type="button" 
                     value="Non" 
                     onClick={(e) => {
-                            // setTypesToSelect(typesToSelect.filter(elem => elem.type !== type));
                             setLastChoiceByUser(e.target.value);
                             setChance(0);
                         }

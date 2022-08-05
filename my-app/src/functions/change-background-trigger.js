@@ -1,4 +1,4 @@
-const changeBackgroundTrigger = (currentType, typesToSelect) => {
+const changeBackgroundTrigger = (currentType, typesToSelect, pkb) => {
     if(currentType !== ""){
         for(let elem of typesToSelect) {
             if(elem.type === currentType) {
@@ -18,6 +18,10 @@ const changeBackgroundTrigger = (currentType, typesToSelect) => {
             }
         }
     }
+    const bgTrigger = {
+        background: "url(" + pkb + ") no-repeat center"
+    }
+    return bgTrigger
 }
 
 export default changeBackgroundTrigger
