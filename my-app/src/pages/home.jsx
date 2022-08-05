@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 
+//Component
 import CardTypes from '../components/card-types';
 import Trigger from '../components/trigger';
 import PanelTryAgain from '../components/panel-try-again';
+import LastPanel from '../components/last-panel';
 
+//config
 import { typesElementsPkm } from '../configs/config';
 
 const Home = ({ challenger }) => {
@@ -14,9 +17,11 @@ const Home = ({ challenger }) => {
     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
     const [textTrigger, setTextTrigger] = useState("Go random!!!");
     const [lastChoiceByUser, setLastChoiceByUser] = useState("");
-
+    const [chance, setChance] = useState(2);
+    const [currentPlayer, setCurrentPlayer] = useState(0);
+    console.log("chance :", chance);
     const ref = useRef(null);
-    console.log(challenger);
+    
     useEffect(() => {
         for(let elem of typeIsSelected) {
             if(elem === true) {
@@ -52,20 +57,35 @@ const Home = ({ challenger }) => {
                     })
                     setDisplayPanel("");
                     setTextTrigger("");
+                    // setChance(chance - 1);
                 }}
                 currentType={currentType}
                 typesToSelect={typesToSelect}
             />  
-
-            <PanelTryAgain 
-                display={displayPanel}
-                type={currentType}
-                setDisplay={setDisplayPanel}
-                setTypeIsSelected={setTypeIsSelected}
-                typesToSelect={typesToSelect}
-                setTypesToSelect={setTypesToSelect}
-                setLastChoiceByUser={setLastChoiceByUser}
-            />
+            
+            {
+                chance > 1 ? 
+                <PanelTryAgain 
+                    display={displayPanel}
+                    type={currentType}
+                    setDisplay={setDisplayPanel}
+                    setTypeIsSelected={setTypeIsSelected}
+                    typesToSelect={typesToSelect}
+                    setTypesToSelect={setTypesToSelect}
+                    setLastChoiceByUser={setLastChoiceByUser}
+                    currentPlayer={challenger[currentPlayer]}
+                    chance={chance}
+                    setChance={setChance}
+                />  :
+                <LastPanel
+                    currentType={currentType} 
+                    setTypesToSelect={setTypesToSelect}
+                    typesToSelect={typesToSelect}
+                    setDisplay={setDisplayPanel}
+                    display={displayPanel}
+                    setChance={setChance}
+                />
+            }
         </div>
     );
 };

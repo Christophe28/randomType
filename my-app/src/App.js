@@ -8,7 +8,7 @@ import Register from "./pages/register";
 import "./style/index.scss";
 
 const App = () => {
-  const [challenger, setChallenger] = useState([]);
+  const [challenger, setChallenger] = useState(["Groundellalala", "Jeff"]);
 
   return (
     <Routes>

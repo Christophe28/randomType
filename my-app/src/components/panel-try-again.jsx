@@ -1,13 +1,13 @@
 import React from 'react';
 
-const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSelect, setTypesToSelect, setLastChoiceByUser }) => {
+const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSelect, setTypesToSelect, setLastChoiceByUser, currentPlayer, chance, setChance }) => {
     return (
         <div 
         className="container-panelTryAgain"
         style={{display: display}}
         >
             <section className="top-side">
-                <p>Votre type sera le type <strong>{type}</strong> ! Souhaitez vous faire une relance ?</p>
+                <p>Challenger {currentPlayer}. Votre type sera le type <strong>{type}</strong> ! Souhaitez vous faire une relance ?</p>
             </section>
             <section className="bot-side">
                 <input 
@@ -16,6 +16,7 @@ const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSe
                     onClick={(e) => {
                             setDisplay("none");     
                             setTypeIsSelected(typesToSelect.map((type) => false))  
+                            setChance(chance - 1);
                             setLastChoiceByUser(e.target.value);
                         }
                     }
@@ -24,9 +25,9 @@ const PanelTryAgain = ({ display, setDisplay, type, setTypeIsSelected, typesToSe
                     type="button" 
                     value="Non" 
                     onClick={(e) => {
-                            setDisplay("none");
-                            setTypesToSelect(typesToSelect.filter(elem => elem.type !== type));
+                            // setTypesToSelect(typesToSelect.filter(elem => elem.type !== type));
                             setLastChoiceByUser(e.target.value);
+                            setChance(0);
                         }
                     }
                 />

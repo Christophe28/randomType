@@ -11,8 +11,6 @@ import MyTable from '../components/my-table';
 
 //Functions
 import namesChallenger from '../functions/register/namesChallenger';
-import goUpdateNames from '../functions/register/go-update-names';
-import updateArrayState from '../functions/update-array-state';
 
 //pictures
 import pngUpdate from "../assets/update24px.png";
@@ -24,7 +22,6 @@ const Register = ({ challenger, setChallenger }) => {
     const [updateName, setUpdateName] = useState([]);
     const [orderChallenger, setOrderChallenger] = useState(0);
     
-    console.log(challenger);
     useEffect(() => {
         setUpdateName(challenger.map(() => false))
     }, [challenger])
