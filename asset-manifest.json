@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/randomType/static/css/main.83b5e5dd.css",
-    "main.js": "/randomType/static/js/main.93f58272.js",
+    "main.css": "/randomType/static/css/main.e3db5a46.css",
+    "main.js": "/randomType/static/js/main.e2e87467.js",
+    "static/media/pokemon-groupe.jpg": "/randomType/static/media/pokemon-groupe.8a241794e38d8e120a6f.jpg",
     "static/media/icon-classic-pkb-128px.png": "/randomType/static/media/icon-classic-pkb-128px.c8ca94065162971105a9.png",
     "index.html": "/randomType/index.html",
-    "main.83b5e5dd.css.map": "/randomType/static/css/main.83b5e5dd.css.map",
-    "main.93f58272.js.map": "/randomType/static/js/main.93f58272.js.map"
+    "main.e3db5a46.css.map": "/randomType/static/css/main.e3db5a46.css.map",
+    "main.e2e87467.js.map": "/randomType/static/js/main.e2e87467.js.map"
   },
   "entrypoints": [
-    "static/css/main.83b5e5dd.css",
-    "static/js/main.93f58272.js"
+    "static/css/main.e3db5a46.css",
+    "static/js/main.e2e87467.js"
   ]
 }
