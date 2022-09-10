@@ -17,7 +17,7 @@ const Home = ({ challenger, allType, setAllType }) => {
     const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * typesToSelect.length));
     const [chance, setChance] = useState(2);
     const [currentPlayer, setCurrentPlayer] = useState(0);
-    
+
     const ref = useRef(null);
 
     useEffect(() => {
@@ -50,6 +50,7 @@ const Home = ({ challenger, allType, setAllType }) => {
             }
         }
     }, [currentPlayer])
+    
     return (
         <div className="container-home">
             <CardTypes

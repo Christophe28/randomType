@@ -2,15 +2,22 @@
     text-align: center;
 
     .container-card-challenger {
+        height: 100vh;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+        
+        section {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .container-challenger {
+                position: absolute;
 
-        ul {
-            font-size: 2rem;
-            li {
-                
-                img {
-                    width: 35px;
+                p {
+                    font-size: 2rem;
+                    font-weight: bolder;
                 }
             }
         }
