@@ -5,8 +5,8 @@ body {
         -webkit-appearance: none;
         background-attachment: fixed;
     }
-    // background-color: $bg-color;
-    background: url("../assets/pokemon-groupe.jpg") no-repeat right/cover;
+    background-color: $bg-color;
+    // background: url("../assets/pokemon-groupe.jpg") no-repeat right/cover;
 }
 
 @import "./pages/register.scss";
