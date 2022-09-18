@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/randomType/static/css/main.83b5e5dd.css",
-    "main.js": "/randomType/static/js/main.e2e87467.js",
+    "main.js": "/randomType/static/js/main.df26db8a.js",
     "static/media/icon-classic-pkb-128px.png": "/randomType/static/media/icon-classic-pkb-128px.c8ca94065162971105a9.png",
     "index.html": "/randomType/index.html",
     "main.83b5e5dd.css.map": "/randomType/static/css/main.83b5e5dd.css.map",
-    "main.e2e87467.js.map": "/randomType/static/js/main.e2e87467.js.map"
+    "main.df26db8a.js.map": "/randomType/static/js/main.df26db8a.js.map"
   },
   "entrypoints": [
     "static/css/main.83b5e5dd.css",
-    "static/js/main.e2e87467.js"
+    "static/js/main.df26db8a.js"
   ]
 }
