@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import MyTypes from "./pages/my-types";
 import Register from "./pages/register";
-import Test from "./pages/Test";
 
 import "./style/index.scss";
 
@@ -15,14 +14,14 @@ const App = () => {
   return (
     <Routes>
       <Route 
-        path="/" 
+        exact path="/" 
         element={<Register
            challenger={challenger}
            setChallenger={setChallenger}
         />} 
       />
       <Route 
-        path="/randomType" 
+        exact path="/choose-type" 
         element={<Home 
           challenger={challenger}
           allType={allType}
@@ -30,18 +29,12 @@ const App = () => {
         />}
       />
       <Route 
-        path="/ourTypes" 
+        exact path="/ourTypes" 
         element={<MyTypes 
           challenger={challenger}
           type={allType}
         />} 
       />
-      <Route
-        path="/test"
-        element={<Test />}
-      >
-
-      </Route>
     </Routes>
   )
 }

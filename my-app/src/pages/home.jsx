@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+//Commentaire test pour voir si je peux toujours push avec github
 //Component
 import CardTypes from '../components/card-types';
 import Trigger from '../components/trigger';
@@ -19,6 +19,7 @@ const Home = ({ challenger, allType, setAllType }) => {
     const [currentPlayer, setCurrentPlayer] = useState(0);
 
     const ref = useRef(null);
+    console.log("c'est deployé 2 fois");
 
     useEffect(() => {
         for(let elem of typeIsSelected) {
