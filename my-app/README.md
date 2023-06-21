@@ -1,14 +1,15 @@
 # RandomType
 
-RandomType est une application créer dans le but de m'exercer lors de mon apprentissage.
+RandomType is an application created with the purpose of practicing during my learning process.
 
 ## Description
 
-RandomType est un générateur aléatoire de type pokémon. Cela fu créer pour permettre à des amis de choisir des types aléatoire lors de partie pokémon avec des règles spécifique.
+RandomType is a random Pokémon type generator. It was created to allow friends to choose random types during Pokémon games with specific rules.
+
 
 ## How to see it ?
 
-Allez sur le lien [https://christophe28.github.io/randomType/]
+Go to the link [https://christophe28.github.io/randomType/].
 
 ## Project Structure
 
@@ -30,10 +31,10 @@ project
 
 ## Features
 
-- **Feature 1:** Enregistrer les joueurs.
-- **Feature 2:** Valider tous les joueurs pour passer à la deuxième page.
-- **Feature 3:** Cliquer sur le bouton centrale pour générer un type aléatoire. Si le type ne vous convient pas vous avez droit de refuser une fois et de relancer.
+- **Feature 1:** Save players.
+- **Feature 2:** Validate all players to proceed to the second page.
+- **Feature 3:** Click the central button to generate a random type. If you don't like the type, you have the option to refuse once and reroll.
 
 ## Authors
 
-- Christophe Buffe (www.linkedin.com/in/christophe-buffe)
+- Christophe Buffe [www.linkedin.com/in/christophe-buffe]
