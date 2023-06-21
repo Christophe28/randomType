@@ -34,13 +34,6 @@ project
 - **Feature 2:** Valider tous les joueurs pour passer à la deuxième page.
 - **Feature 3:** Cliquer sur le bouton centrale pour générer un type aléatoire. Si le type ne vous convient pas vous avez droit de refuser une fois et de relancer.
 
-## Screenshots
-
-![Home Screen](./mdPicture/step_1.png)
-![Registration](./mdPicture/step_2.png)
-![Betting](./mdPicture/step_4.png)
-![Question](./mdPicture/step_5.png)
-
 ## Authors
 
 - Christophe Buffe (www.linkedin.com/in/christophe-buffe)
